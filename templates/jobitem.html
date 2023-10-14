@@ -1,0 +1,26 @@
+<div style="padding: 8px; margin:25px;  ">
+
+    {% for job in jobs %}
+    <div style="display: flex; justify-content: space-between; padding: 8px; margin:10px; border-bottom: 1px solid black ">
+        <div style="">
+            <h4 style="margin-bottom: 4px; color:rgb(120,120,120); ">
+                {{job['title']}}
+            </h4>
+            <div>
+                <b>Location:</b> {{job['location']}}
+            </div>
+            {% if 'salary' in job %}
+            <div>
+                <b>Salary:</b> {{job['salary']}}
+            </div>
+            {% endif %}
+            
+        </div>
+        <div style="">
+            <a class="btn btn-outline-primary" href="mailto:hr@winter.com?subject=Regarding%20job%20opening%20of%20{{job.title}}%20at%20Winter%20Careers&body=My%20name%3A%20%3Center%20your%20name%3E%0A%0AMy%20LinkedIn%3A%20%3Clinkedin%20link%3E%0A%0AMy%20resume%2Fportfolio%3A%20%3C%20portfolio%20link%20%2F%20upload%20your%20resume%20as%20pdf%3E%0A%0A%3CExtra%20space%3E%0A">Apply Now</a>
+        </div>
+    </div>
+
+    {% endfor %}
+    
+</div>
